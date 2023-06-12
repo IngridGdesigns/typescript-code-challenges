@@ -1,0 +1,26 @@
+{
+  "name": "typescipt code challenges with tests",
+  "author": "Ingrid Garcia",
+  "description": "Using Codeacademy's (\"20 Code Challenges\")[https://www.codecademy.com/resources/blog/20-code-challenges/], To help me improve my skills in TypeScript.",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "npx tsc",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "@types/node": "^20.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "eslint": "^8.42.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "ts-jest": "^29.1.0"
+  }
+}
