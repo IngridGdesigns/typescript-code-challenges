@@ -81,10 +81,15 @@ BST.insert(BST.head, 70);
 // console.log(BST);
 BST.inorderTraversal();
 
-// public generateTree(node: Node | null = this.head, arry: number[]): Node {
-//     if (arry === null) {
-//         let node = null;
-//         return node;
-//     }
+
+// To-do: add function to generateTree taking in an array
+// export function generateTree(arry: number[]): Node {
+    // for each element in the array, 
+    // iterate and insert in BST
+// check if array is null? 
+// if (arry === null) {
+    //     let node = null;
+    //     return node;
+    // }
 
 // }
