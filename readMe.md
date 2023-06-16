@@ -8,4 +8,10 @@ A space to help me study and improve my skills in TypeScript/JavaScript and Jest
 - [Free Code Camp](https://www.freecodecamp.org/)
 - [educative.io](https://www.educative.io/courses/simplifying-javascript-handy-guide)
 
+## Getting Started
+
+Clone the file and run `npm install`
+- To run a specific file run `node/dist/01-reverseWords.js`
+- To run tests type `npm test`
+
 
