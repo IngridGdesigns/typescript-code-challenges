@@ -41,7 +41,6 @@ var arr: User[] = [
   { id: 2, name: 'Started' },
 ];
 
-
 // check existence of items
 const sections = ['helpline', 'contacts'];
 
@@ -64,9 +63,13 @@ const novels = removeItem(books, 'baking bread');
 console.log('Novels: ' + novels);
 
 // define args as tuple to avoid typeScript error
-const book: [string, string, number] = ['Popcorn fun', 'Popcorn Enthusiast', 9.99];
+const book: [string, string, number] = [
+  'Popcorn fun',
+  'Popcorn Enthusiast',
+  9.99,
+];
 
-function formatBook(title: string, author:string, price: number): string {
+function formatBook(title: string, author: string, price: number): string {
   return `${title} by ${author} ${price}`;
 }
 
@@ -80,8 +83,45 @@ function func1(arr1: number[], arr2: number[], n: number) {
 
 console.log(func1([1, 2, 3], [4, 5, 6], 1));
 
-
 // avoiding mutations  - instead of using .push()
 const shoppingList = ['Strawberries', 'Apples'];
 const moreItems = [...shoppingList, 'Oranges'];
 console.log(moreItems);
+
+const pets = [
+  {
+    name: 'Dot',
+    years: 10,
+  },
+  {
+    name: 'Penny',
+    years: 5,
+  },
+  {
+    name: 'Roxie',
+    years: 3,
+  },
+];
+
+function sortByYears(a: { years: number }, b: { years: number }): number {
+  if (a.years === b.years) {
+    return 0;
+  }
+  return a.years - b.years;
+}
+
+const sortByName = (a: { name: string }, b: { name: string }) => {
+  if (a.name === b.name) {
+    return 0;
+  }
+  return a.name > b.name ? 1 : -1;
+};
+
+// sorting without mutating
+const values = [...pets];
+//sorting by years
+console.log(values.sort(sortByYears));
+//next, sorting by name
+console.log(values.sort(sortByName));
+//lastly, sorting by years a second time
+console.log([...pets].sort(sortByYears));
