@@ -23,8 +23,8 @@ class Node {
   public left: Node | null;
   public right: Node | null;
 
-  constructor(data: number) {
-    this.data = data;
+  constructor(data?: number, left?: Node | null, right?: Node | null) {
+    this.data = data === undefined ? 0 : data;
     this.left = null;
     this.right = null;
   }
@@ -37,20 +37,20 @@ export class BinarySearchTree {
   }
 
   public insert(node: Node | null = this.head, value: number): Node {
-    if (node === null) {
-      const root = new Node(value);
-      return root;
-    } else {
-      if (value < node.data) {
-        // if its less then the current node data
-        node.left = this.insert(node.left, value); // (recursively calls itself)
-        // place on the left side
+      if (!node) {
+        const root = new Node(value);
+        return root;
       } else {
-        // if not, add to the right child
-        node.right = this.insert(node.right, value);
+        if (value < node.data) {
+          // if its less then the current node data
+          node.left = this.insert(node.left, value); // (recursively calls itself)
+          // place on the left side
+        } else {
+          // if not, add to the right child
+          node.right = this.insert(node.right, value);
+        }
+        return node; // happens until it add to the right spot in the tree
       }
-      return node; // happens until it add to the right spot in the tree
-    }
   }
 
   public inorderTraversal(node: Node | null = this.head): void {
@@ -63,33 +63,45 @@ export class BinarySearchTree {
   }
 }
 
-const rootNode = new Node(6);
-rootNode.left = new Node(3);
-rootNode.right = new Node(12);
+function generateTree(list: number[]): BinarySearchTree {
+  const rootNode = new Node(list[0]);
+  const tree = new BinarySearchTree(rootNode);
 
-const BST = new BinarySearchTree(rootNode);
-BST.insert(BST.head, 12);
-BST.insert(BST.head, 11);
-BST.insert(BST.head, 14);
-BST.insert(BST.head, 1);
-BST.insert(BST.head, 20);
-BST.insert(BST.head, 22);
-BST.insert(BST.head, 25);
-BST.insert(BST.head, 13);
-BST.insert(BST.head, 70);
-// // const arr = [8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15]
-// console.log(BST);
+  list.forEach((element, index) => {
+    if (index < 1) return; // ignoring 1st insertion, "strarting second element"
+    tree.insert(tree.head, element);
+  });
+
+  return tree;
+}
+const arry = [8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15];
+
+const BST = generateTree(arry); //  inserting of a single value is on average O(log n)
+console.log(BST);
 BST.inorderTraversal();
 
 
-// To-do: add function to generateTree taking in an array
-// export function generateTree(arry: number[]): Node {
-    // for each element in the array, 
-    // iterate and insert in BST
-// check if array is null? 
-// if (arry === null) {
-    //     let node = null;
-    //     return node;
-    // }
 
-// }
+
+
+// manual version
+// const rootNode = new Node(8);
+// rootNode.left = new Node(4);
+// rootNode.right = new Node(12);
+
+// const BST = new BinarySearchTree(rootNode);
+
+
+// BST.insert(BST.head, 12);
+// BST.insert(BST.head, 11);
+// BST.insert(BST.head, 14);
+// BST.insert(BST.head, 1);
+// BST.insert(BST.head, 20);
+// BST.insert(BST.head, 22);
+// BST.insert(BST.head, 25);
+// BST.insert(BST.head, 13);
+// BST.insert(BST.head, 70);
+
+
+
+
