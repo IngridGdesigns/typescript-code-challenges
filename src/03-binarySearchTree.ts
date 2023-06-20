@@ -68,7 +68,7 @@ function generateTree(list: number[]): BinarySearchTree {
   const tree = new BinarySearchTree(rootNode);
 
   list.forEach((element, index) => {
-    if (index < 1) return; // ignoring 1st insertion, "strarting second element"
+    if (index < 1) return; // ignoring 1st element, "starting second element"
     tree.insert(tree.head, element);
   });
 
@@ -84,7 +84,7 @@ BST.inorderTraversal();
 
 
 
-// manual version
+// manual version of inserting to BST
 // const rootNode = new Node(8);
 // rootNode.left = new Node(4);
 // rootNode.right = new Node(12);
@@ -98,9 +98,6 @@ BST.inorderTraversal();
 // BST.insert(BST.head, 1);
 // BST.insert(BST.head, 20);
 // BST.insert(BST.head, 22);
-// BST.insert(BST.head, 25);
-// BST.insert(BST.head, 13);
-// BST.insert(BST.head, 70);
 
 
 
