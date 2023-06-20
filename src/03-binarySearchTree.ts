@@ -49,7 +49,7 @@ export class BinarySearchTree {
           // if not, add to the right child
           node.right = this.insert(node.right, value);
         }
-        return node; // happens until it add to the right spot in the tree
+        return node; // happens until it adds item to the right spot in the tree
       }
   }
 
