@@ -10,8 +10,9 @@ A space to help me study and improve my skills in TypeScript/JavaScript and Jest
 
 ## Getting Started
 
-Clone the file and run `npm install`
-- To run a specific file run `node/dist/01-reverseWords.js`
+Clone the file and in your terminal run `npm install`
+- To run a specific file run: `node/dist/exampleFile.js`
 - To run tests type `npm test`
+
 
 
