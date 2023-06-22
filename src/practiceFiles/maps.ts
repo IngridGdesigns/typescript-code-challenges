@@ -53,3 +53,14 @@ console.log(filters.get('color'));
 console.log(filters);
 filters.clear(); // delete all key-value pairs with clear() method
 console.log(filters.get('color'));
+
+
+// Map can take in different type of keys, such as integers
+let errors = new Map([
+  [100, 'Invalid name'],
+  [110, 'Name should only contain letters'],
+  [200, 'Invalid color'],
+]);
+console.log(errors.get(100));
+// can also get the keys from a Map 
+console.log(errors.keys()); // The MapIterator is what will allow us to loop through data.
