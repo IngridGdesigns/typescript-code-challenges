@@ -140,3 +140,16 @@ function getSortedAppliedFilters(veggies2: Map<string, string>): string {
 }
 
 console.log(getSortedAppliedFilters(veggies2));
+
+/* Looping over maps roadmap
+here’s a summary of the steps:
+
+1 - Convert your map to an array.
+
+2 - Sort the array. (if needed)
+
+3 - Convert each pair to a string of the form key:value.
+
+4 - Join the array items creating a string.
+
+5 - Combine the string with other information using a template literal.*/ 
