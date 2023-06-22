@@ -125,3 +125,111 @@ console.log(values.sort(sortByYears));
 console.log(values.sort(sortByName));
 //lastly, sorting by years a second time
 console.log([...pets].sort(sortByYears));
+
+// objects without mutations
+// Object.assign() to create and update fields on an object with
+//  keys and values from another object(or objects).
+// In other words, Object.assign() lets you update an object
+// with properties from another object.
+
+const animalDefaults = {
+  name: '',
+  class: 'bird',
+  type: 'vertebrata',
+  canFly: null,
+  favFood: 'fish',
+};
+
+const bird = {
+  name: 'penguin',
+  canFly: false,
+};
+
+const anotherBird = {
+  canFly: true,
+  favFood: 'fruit',
+};
+
+function addAnimalDefaults(bird: object, animalDefaults: object): object {
+  return Object.assign({}, animalDefaults, bird);
+}
+
+/* expected output
+make the first object an empty object. The returned object will be the 
+updated empty object. The other objects will have no mutations.
+works with flat objects not nested
+{
+  name: 'penguin',
+  class: 'bird',
+  type: 'vertebrata',
+  canFly: false,
+  favFood: 'insects'
+}
+{
+  name: '',
+  class: 'bird',
+  type: 'vertebrata',
+  canFly: true,
+  favFood: 'fruit'
+}}*/
+console.log(addAnimalDefaults(bird, animalDefaults));
+console.log(addAnimalDefaults(anotherBird, animalDefaults));
+
+const defaultEmployee = {
+  name: {
+    first: '',
+    last: '',
+  },
+  years: 2,
+};
+
+//Whenever there is a nested object, copy that with Object.assign()
+// and everything will be updated.
+const employeeHere = Object.assign({}, defaultEmployee, {
+  name: Object.assign({}, defaultEmployee.name),
+});
+employeeHere.name.first = 'Aliosha';
+console.log('Employee:');
+console.log(employeeHere);
+console.log('\nDefault employee:');
+console.log(defaultEmployee);
+
+// Fixing deep copy issues with Object spread operator:
+const employee = { ...defaultEmployee, name: { ...defaultEmployee.name } };
+
+employee.name.first = 'Aliosha';
+console.log('Employee:');
+console.log(employee);
+console.log('\nDefault employee:');
+console.log(defaultEmployee);
+
+// Instead of Object.assign(), Object spread operator is cleaner and easy on the eyes
+// if you add a value with the same key, it will use whatever value is declared last.
+const animal = {
+  class: 'Mammal',
+  name: 'Lion',
+};
+const update = { ...animal, name: 'Jaguar' };
+console.log(`\n`, update);
+
+function addAnimalDefaultsWithObjectSpreadOperator(
+  bird: object,
+  animalDefaults: object
+): object {
+  return { ...animalDefaults, ...bird };
+}
+console.log(addAnimalDefaultsWithObjectSpreadOperator(bird, animalDefaults));
+
+
+let person1 = { name: 'Joey', age: '21' };
+let person2 = { name: 'Rachel', age: '22' };
+
+let persons = [person1, person2];
+
+let setJob = function (persons: any[], index: number, job: string): any[] {
+  persons[index].job = job;
+  return persons;
+};
+
+setJob([...persons], 0, 'Artist');
+console.log(persons);
