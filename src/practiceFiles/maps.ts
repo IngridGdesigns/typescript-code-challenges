@@ -152,4 +152,32 @@ here’s a summary of the steps:
 
 4 - Join the array items creating a string.
 
-5 - Combine the string with other information using a template literal.*/ 
+5 - Combine the string with other information using a template literal.*/
+
+/* Mutating maps! 
+
+check to see if the map has a key using the has() method. If no key exists, 
+set the key value. If the key already exists, you can ignore it.
+
+Copying & avoiding mutation using the spread operator, colors Map
+is map is safe from side effects while your new map contains all 
+the defaults and all the applied information.
+
+Maps, like objects, can only have a key once. So if you tried to create a map 
+with a new key, it will use whatever value for that key is declared last. It’s as if you 
+were updating the value instead of setting it.
+
+*/
+const defaults = new Map()
+    .set('color', 'brown')
+    .set('breed', 'beagle')
+    .set('state', 'kansas');
+
+const colors = new Map()
+    .set('color', 'black');
+
+function applyDefaults(map: Map<string, string>, defaults: Map<string, string>): Map<string, string> {
+    return new Map([...defaults, ...map]);
+}
+
+console.log(applyDefaults(colors, defaults));
