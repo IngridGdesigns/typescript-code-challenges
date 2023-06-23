@@ -53,3 +53,34 @@ const person = {
 if (!person.equipmentTraining) {
   console.log(`${person.name} is not authorized to operate machinery`);
 }
+
+// The most common problem occurs when you’re testing existence in an array 
+// by checking the index of a value:
+console.log(['c', 'd'].indexOf('c')) // 0 which is falsy
+
+/* use a strict equivalency check to make sure the value is there and it’s in
+the format you want.If you use strict equivalency, you can guard against a 
+situation where someone sets employee.equipmentTraining to 'Not Trained'*/
+const baker = {
+    name: 'Panfilo',
+    bruleeTraining: true,
+};
+
+
+function checkAuthorization() {
+    if (baker.bruleeTraining !== true) {
+        return 'Not authorized to operate blow torch';
+    }
+    return `Hello, ${baker.name}`
+}
+
+// baker.bruleeTraining = 'Not Trained';
+console.log(checkAuthorization());
+
+// const a = '0';
+// if (a == false) {
+//   console.log('Hello');
+// } else {
+//   console.log('Bye');
+// }
+// output: Hello
