@@ -60,7 +60,7 @@ console.log(['c', 'd'].indexOf('c')); // 0 which is falsy
 
 /* use a strict equivalency check to make sure the value is there and it’s in
 the format you want.If you use strict equivalency, you can guard against a 
-situation where someone sets employee.equipmentTraining to 'Not Trained' */
+situation where someone sets baker.bruleeTraining to 'Not authorized to operate blow torch' */
 const baker = {
   name: 'Panfilo',
   bruleeTraining: true,
@@ -127,3 +127,20 @@ function getJobTitle(title: string): string[] {
 }
 console.log(getJobTitle('manager'));
 console.log(getJobTitle('supervisor'));
+
+
+const name = 'joe' || 'I have no name';
+console.log(name);
+
+// Preventing errors using short circuiting
+// A logical string built with an && operator will cease as soon as a false value occurs.
+const desktop = {};
+
+function getImage(desktop: { images?: any; }) {
+  if (desktop.images && desktop.images.length > 0) {
+    return desktop.images[0];
+  }
+  return 'default.png';
+}
+
+console.log(getImage(desktop));
