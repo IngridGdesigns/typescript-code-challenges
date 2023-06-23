@@ -60,7 +60,7 @@ console.log(['c', 'd'].indexOf('c')); // 0 which is falsy
 
 /* use a strict equivalency check to make sure the value is there and it’s in
 the format you want.If you use strict equivalency, you can guard against a 
-situation where someone sets employee.equipmentTraining to 'Not Trained'*/
+situation where someone sets employee.equipmentTraining to 'Not Trained' */
 const baker = {
   name: 'Panfilo',
   bruleeTraining: true,
@@ -85,10 +85,9 @@ console.log(checkAuthorization());
 // output: Hello
 
 // Ternary practice
-// ternary expressions allow your code to be not just more simple, but also more predictable,
+// ternary expressions allow your code to be readabe and simple, also more predictable,
 // because they cut down on the number of variables that are being reassigned.
 // before ternary
-
 const active = true;
 let display;
 
