@@ -88,6 +88,7 @@ console.log(checkAuthorization());
 // ternary expressions allow your code to be not just more simple, but also more predictable,
 // because they cut down on the number of variables that are being reassigned.
 // before ternary
+
 const active = true;
 let display;
 
@@ -115,7 +116,7 @@ console.log(permissions);
 // with ternary
 const typeOfPermissions = title === 'cook' ? ['time', 'pay'] : ['time'];
 
-// avoid chaining multiple ternary expressions together, it makes it undreadable
+// avoid chaining multiple ternary expressions together, it makes it unreadable
 function getJobTitle(title: string): string[] {
   const permissions =
     title === 'supervisor' || title === 'teacher'
@@ -123,7 +124,7 @@ function getJobTitle(title: string): string[] {
         ? ['time', 'overtimeAuthorization', 'pay']
         : ['time', 'overtimeAuthorization']
       : ['time'];
-  return permissions; // undreadable and ugly looking
+  return permissions; // unreadable and ugly looking
 }
 console.log(getJobTitle('manager'));
 console.log(getJobTitle('supervisor'));
