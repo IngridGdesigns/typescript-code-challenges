@@ -128,15 +128,15 @@ function getJobTitle(title: string): string[] {
 console.log(getJobTitle('manager'));
 console.log(getJobTitle('supervisor'));
 
-
 const name = 'joe' || 'I have no name';
 console.log(name);
 
 // Preventing errors using short circuiting
 // A logical string built with an && operator will cease as soon as a false value occurs.
+// You can safely check for the existence of a collection and then call a method on it.
 const desktop = {};
 
-function getImage(desktop: { images?: any; }) {
+function getImage(desktop: { images?: any }) {
   if (desktop.images && desktop.images.length > 0) {
     return desktop.images[0];
   }
@@ -144,3 +144,18 @@ function getImage(desktop: { images?: any; }) {
 }
 
 console.log(getImage(desktop));
+
+// short circuiting and ternary combo
+const favMovies = {
+  titles: ['Matrix', ' A Scanner Darkly'],
+};
+
+function getFavMovies(favMovies: { titles: string[] }): string {
+  const images = favMovies.titles;
+  return images && images.length ? images[0] : 'default.png';
+}
+
+console.log(getFavMovies(favMovies));
+// When things get long(usually around three conditional checks), it’s better to make it a
+// standalone function. Simplicity is great. And it’s fun to try and find clever ways to
+// reduce things to one line.But the goal is always communication and readability.
