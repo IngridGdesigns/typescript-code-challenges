@@ -159,3 +159,34 @@ console.log(getFavMovies(favMovies));
 // When things get long(usually around three conditional checks), it’s better to make it a
 // standalone function. Simplicity is great. And it’s fun to try and find clever ways to
 // reduce things to one line.But the goal is always communication and readability.
+
+
+// Coalescing operator 
+// from MDN - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
+// The nullish coalescing(??) operator is a logical operator that returns its right-hand side
+// operand when its left - hand side operand is null or undefined, and otherwise returns its
+// left - hand side operand.
+const boo = null ?? 'default string';
+console.log(boo);
+// Expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz);
+// Expected output: 0
+
+// probaly better ot use the The nullish coalescing operator  - it avoids returning falsy values,
+// by only returning the second operand when the first one evaluates to either null
+// or undefined(but no other falsy values):
+const myText = ''; // An empty string (which is also a falsy value)
+
+const notFalsyText = myText || 'Hello world';
+console.log(notFalsyText); // Hello world
+
+const preservingFalsy = myText ?? 'Hi neighborhood';
+console.log(preservingFalsy); // '' (as myText is neither undefined nor null)
+
+const foo = { someFooProp: 'hi everybody', someBarProp: null };
+
+console.log(foo.someFooProp?.toUpperCase() ?? 'not available'); // "HI"
+// console.log(foo.someBarProp?.toUpperCase() ?? 'not available'); // "not available" // errors out in typescript
+// ".toUpperCase" does not exist on type 'never
