@@ -131,3 +131,23 @@ const profile = images.find((image) => image.profile) ?? {
 console.log(profile);
 
 //forEach()
+/*forEach() performs an action on every member.This is common when you finally 
+get an array to the size and shape you want and then you want to do 
+something with that data.
+The return statment does absolutely nothing!! its void by nature
+
+Any action you take must affect something outside the function. Changing something outside 
+the scope of the function is called a side effect, and though it’s not horrible, it should 
+be exercised with caution.
+
+when you know you must cause a side effect, you should use forEach().
+
+*/
+
+const bookClub = ['minh', 'alani', 'maël', 'leo', 'juan', 'alex', 'joão'];
+
+function sendEmail(member: string): void {
+  console.log(`hello ${member.toUpperCase()}, bring something to share for the potluck!!`); // send email
+}
+
+bookClub.forEach((member) => sendEmail(member));
