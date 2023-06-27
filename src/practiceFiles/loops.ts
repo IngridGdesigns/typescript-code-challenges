@@ -74,7 +74,7 @@ const scissors = supplies.filter((item) => item.match(findScissors));
 console.log(scissors); // output: empty array
 
 // good candidate if you only want the first item found or if you know there will only
-// be one value of the item you're looking for. 
+// be one value of the item you're looking for.
 
 const talent = [
   {
@@ -108,9 +108,26 @@ const juggler = talent.find((performer) =>
 );
 console.log(juggler);
 
-// The only down-side to using find() is that you can’t be absolutely sure of 
+// The only down-side to using find() is that you can’t be absolutely sure of
 // the return value.If there’s no match, you get undefined,
 const contortionist = talent.find((performer) =>
   performer.performance.includes('contortionist')
 );
 console.log(contortionist); // output: undefined
+
+// you can short circuit to avoid undefined using 'coalescing operator' aka elvis operator ?:
+
+const images = [
+  {
+    path: './me.jpg',
+    profile: false,
+  },
+];
+
+const profile = images.find((image) => image.profile) ?? {
+  path: './default.jpg',
+};
+
+console.log(profile);
+
+//forEach()
