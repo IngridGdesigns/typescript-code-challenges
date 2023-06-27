@@ -144,10 +144,56 @@ when you know you must cause a side effect, you should use forEach().
 
 */
 
-const bookClub = ['minh', 'alani', 'maël', 'leo', 'juan', 'alex', 'joão'];
+const danceClub = [
+  { name: 'minh', active: true, email: 'minh@email.com' },
+  { name: 'alani', active: true, email: '' },
+  { name: 'maël', active: true, email: '' },
+  { name: 'leo', active: false, email: 'leo452@email.com' },
+  { name: 'juan', active: true, email: '' },
+  { name: 'alex', active: false, email: 'lex@email.com' },
+  { name: 'joão', active: true, email: 'joãolovesfood@email.com' },
+];
 
 function sendEmail(member: string): void {
-  console.log(`hello ${member.toUpperCase()}, bring something to share for the potluck!!`); // send email
+  console.log(
+    `Email sent with msg: hello ${member.toUpperCase()}, bring something to share for the potluck!!`
+  ); // send email
 }
 
-bookClub.forEach((member) => sendEmail(member));
+danceClub.forEach((member) => sendEmail(member.name));
+
+//  If members have an email set, use that. Otherwise, use their default danceClub email address.
+const activeMembers = danceClub.filter((members) => members.active); // first filter out inactive members
+
+const emails = activeMembers.map(
+  (member) => member.email || `${member.name}@wiscsail.io`
+);
+console.log(emails);
+/* output:
+[
+  'minh@email.com',
+  'alani@wiscsail.io',
+  'maël@wiscsail.io',
+  'juan@wiscsail.io',
+  'joãolovesfood@email.com',
+];
+
+
+if member.email ?? `${member.name}@wiscsail.io` output would be an array of some empty strings, 
+['minh@email.com', '', '', '', 'joãolovesfood@email.com'];
+*/
+
+emails.forEach((bookClubMember) => sendEmail(bookClubMember));
+
+// Chaining
+// Removing the intermediate steps, you get an identical set of actions without any variable declarations.
+const allActiveMembers = danceClub
+  .filter((member) => member.active)
+  .map((activeMember) => activeMember.email || `${activeMember.name}@wiscsail.io`)
+  .forEach((person) => sendEmail(person));
+
+/* Downside to chaining array methods is that each time you call a new method, you’re iterating 
+over the whole returned array. This is bad if you are dealing with large data sets and Order does matter!
+
+The reduce() method is different from other array methods in several ways, but the most important is 
+that it can change both the size and the shape of data. And it doesn't necessarily return an array. */
