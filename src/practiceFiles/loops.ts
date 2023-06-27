@@ -61,5 +61,56 @@ for (let i = 0; i < supplies.length; i++) {
 
 // refactor to use filter
 const findPaper = /paper/;
-const paperTypes = supplies.filter(item => item.match(findPaper));
+const paperTypes = supplies.filter((item) => item.match(findPaper));
 console.log(paperTypes);
+
+/* find()
+The find() method takes a function as argument, a function that returns a 
+truthy or falsy value, and returns only the first result that evaluates to true.
+If there’s no true value, it returns undefined.*/
+
+const findScissors = /scissors/;
+const scissors = supplies.filter((item) => item.match(findScissors));
+console.log(scissors); // output: empty array
+
+// good candidate if you only want the first item found or if you know there will only
+// be one value of the item you're looking for. 
+
+const talent = [
+  {
+    name: 'Valeria',
+    performance: ['juggling'],
+  },
+  {
+    name: 'Rosita',
+    performance: ['tightrope', 'dancing'],
+  },
+  {
+    name: 'Joaquin',
+    performance: ['clown'],
+  },
+];
+
+let jugglingPerformer;
+
+for (let i = 0; i < talent.length; i++) {
+  if (talent[i].performance.includes('juggling')) {
+    jugglingPerformer = talent[i];
+    break;
+  }
+}
+
+// console.log(jugglingPerformer);
+
+// refactor for loop
+const juggler = talent.find((performer) =>
+  performer.performance.includes('juggling')
+);
+console.log(juggler);
+
+// The only down-side to using find() is that you can’t be absolutely sure of 
+// the return value.If there’s no match, you get undefined,
+const contortionist = talent.find((performer) =>
+  performer.performance.includes('contortionist')
+);
+console.log(contortionist); // output: undefined
