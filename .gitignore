@@ -1,6 +1,7 @@
 #git ignore file
 
 dist
+src/practiceFiles/loops1.ts
 
 # Dependency directories
 node_modules/
