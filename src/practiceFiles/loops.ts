@@ -204,10 +204,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 */
 
-const callback = function (
-  collectedValues: string[],
-  item: any
-): string[] {
+const callback = function (collectedValues: string[], item: any): string[] {
   return [...collectedValues, item];
 };
 
@@ -265,3 +262,25 @@ console.log(aggregated);
 const reverseWords = (string: string) =>
   string.split('').reduce((reverse, char) => char + reverse, '');
 console.log(reverseWords('hello'));
+
+// only works on key-value objects. It’s called the for...in loop
+// mdn example: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+const array1 = ['yellow', 'red', 'green'];
+
+for (const element of array1) {
+  console.log(`I love the ${element} crayons`);
+}
+
+// for..in loops
+//  Unlike the for...of loop, you don’t get the values, and you’ll have to reference the 
+// full collection using the key on each iteration.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+const crayons: Record<string, any> = { orange: 2, aqua: 3, pink: 1 };
+
+for (const item in crayons) {
+  console.log(`The box has ${crayons[item]} ${item} crayon`);
+}
+
+/* Don’t mutate the object as you loop over it. That can be very dangerous, and bugs can creep 
+in quickly, especially if you add or modify properties other than the property currently being iterated.
+*/
