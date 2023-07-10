@@ -163,6 +163,8 @@ Copying & avoiding mutation using the spread operator, colors Map
 is map is safe from side effects while your new map contains all 
 the defaults and all the applied information.
 
+Avoiding side effects and mutations requires discipline more than syntax.
+
 Maps, like objects, can only have a key once. So if you tried to create a map 
 with a new key, it will use whatever value for that key is declared last. It’s as if you 
 were updating the value instead of setting it.
