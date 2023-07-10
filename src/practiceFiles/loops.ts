@@ -263,7 +263,7 @@ const reverseWords = (string: string) =>
   string.split('').reduce((reverse, char) => char + reverse, '');
 console.log(reverseWords('hello'));
 
-// only works on key-value objects. It’s called the for...in loop
+// only works on key-value objects. It’s called the for...of loop
 // mdn example: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
 const array1 = ['yellow', 'red', 'green'];
 
@@ -272,7 +272,7 @@ for (const element of array1) {
 }
 
 // for..in loops
-//  Unlike the for...of loop, you don’t get the values, and you’ll have to reference the 
+//  Unlike the for...of loop, you don’t get the values, and you’ll have to reference the
 // full collection using the key on each iteration.
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 const crayons: Record<string, any> = { orange: 2, aqua: 3, pink: 1 };
