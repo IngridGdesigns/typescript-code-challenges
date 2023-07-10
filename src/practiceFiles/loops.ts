@@ -6,10 +6,10 @@ All array methods are just methods that take a callback that act on each member 
 
 // .map
 const toys = [
-  { name: 'stacking cups', material: 'plastic' },
-  { name: 'blocks', material: 'wood' },
-  { name: 'ball', material: 'rubber' },
-  { name: 'teddy', material: 'cotton' },
+  { name: 'stacking cups', material: 'plastic', color: 'multicolor' },
+  { name: 'blocks', material: 'wood', color: 'rainbow' },
+  { name: 'ball', material: 'rubber', color: 'red' },
+  { name: 'teddy', material: 'cotton', color: 'brown' },
 ];
 // get list of toys
 const allToys = [];
@@ -189,11 +189,79 @@ emails.forEach((bookClubMember) => sendEmail(bookClubMember));
 // Removing the intermediate steps, you get an identical set of actions without any variable declarations.
 const allActiveMembers = danceClub
   .filter((member) => member.active)
-  .map((activeMember) => activeMember.email || `${activeMember.name}@wiscsail.io`)
+  .map(
+    (activeMember) => activeMember.email || `${activeMember.name}@wiscsail.io`
+  )
   .forEach((person) => sendEmail(person));
 
 /* Downside to chaining array methods is that each time you call a new method, you’re iterating 
 over the whole returned array. This is bad if you are dealing with large data sets and Order does matter!
 
 The reduce() method is different from other array methods in several ways, but the most important is 
-that it can change both the size and the shape of data. And it doesn't necessarily return an array. */
+that it can change both the size and the shape of data. And it doesn't necessarily return an array. 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
+*/
+
+const callback = function (
+  collectedValues: string[],
+  item: any
+): string[] {
+  return [...collectedValues, item];
+};
+
+const saying = ['ven', 'claro', 'ta bueno'];
+const initialValue: any[] = [];
+const copy = saying.reduce(callback, initialValue); // the callback function must always return the carry item.
+console.log(copy);
+
+// getting the unique values from an array.
+const toyColors = toys.reduce((colors: string[], toy) => {
+  if (colors.includes(toy.color)) {
+    return colors;
+  }
+  return [...colors, toy.color];
+}, []); // start reading at the end to understand what your getting at the end
+// —a string, a Boolean, an object
+
+console.log(toyColors);
+/*
+You’re returning a subset of data (changing the size)
+
+You’re returning modified data (changing the shape).
+
+You’re changing the size based on information contained inside the array itself.
+*/
+
+const developers = [
+  {
+    name: 'Felipe',
+    language: 'php',
+  },
+  {
+    name: 'Isabella',
+    language: 'python',
+  },
+  {
+    name: 'Delfina',
+    language: 'python',
+  },
+  {
+    name: 'Santiago',
+    language: 'javascript',
+  },
+];
+const aggregated = developers.reduce((specialities: any, developer) => {
+  const count = specialities[developer.language] || 0;
+  return {
+    ...specialities,
+    [developer.language]: count + 1,
+  };
+}, {});
+
+console.log(aggregated);
+
+const reverseWords = (string: string) =>
+  string.split('').reduce((reverse, char) => char + reverse, '');
+console.log(reverseWords('hello'));
