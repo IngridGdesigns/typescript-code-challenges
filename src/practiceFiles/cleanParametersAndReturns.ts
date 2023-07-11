@@ -96,12 +96,12 @@ console.log(remaining);
 // The rest operator is a great way to debug.
 
 // downside to using the rest operator as an argument is that it must be the last argument in all 
-// situations.It must be the last parameter for a function.It must be the last value when destructuring.
-const func = (val1: number, val2: number, val3: number, ...args: number[]) => {
-  const res1 = args.map((val) => val * 2);// 8, 10
-  const res2 = res1.reduce((number, acc) => (number += acc)); // 8 + 10
-  const res3 = val1 + val2 + val3 + res2; // 1+2+3+8+10 = 24
-  return res3;
+// situations. It must be the last parameter for a function.It must be the last value when destructuring.
+const multiplyAndAdd = (val1: number, val2: number, val3: number, ...restOfNumbers: number[]) => {
+  const multipliedNumbers = restOfNumbers.map((val) => val * 2);// 8, 10
+  const res2 = multipliedNumbers.reduce((number, acc) => (number += acc)); // 8 + 10
+  const addedNums = val1 + val2 + val3 + res2; // 1+2+3+8+10 = 24
+  return addedNums;
 };
 
-console.log(func(1, 2, 3, 4, 5));
+console.log(multiplyAndAdd(1, 2, 3, 4, 5));
