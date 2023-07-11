@@ -57,6 +57,19 @@ const cookieMakingWorkshop = {
   src: '/cookie-Nitza-Baking.jpg',
 };
 
-const { src: photo } = cookieMakingWorkshop
+const { src: photo } = cookieMakingWorkshop;
 console.log(photo);
 // console.log(src); src will be undefined
+
+//Destructuring with arrays
+// You can also use destructuring assignment with arrays, with one big exception: Because there are no
+// keys in arrays, you can use any variable name you want, but you must assign the information in order.
+const gps = {
+  location: [45.7122222, -106.1203526],
+};
+const {
+  location: [latitude, longitude],
+} = gps;
+
+console.log(latitude);
+console.log(longitude);
