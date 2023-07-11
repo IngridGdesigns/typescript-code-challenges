@@ -73,3 +73,35 @@ const {
 
 console.log(latitude);
 console.log(longitude);
+
+// passing variable number of arguments with rest operator
+function validateCharacterCount(max: number, ...items: string[]): boolean {
+  return items.every((item) => item.length < max);
+}
+const food = ['melon', 'eggs', 'toast'];
+console.log(validateCharacterCount(7, ...food));
+
+const crayolabox = ['red', 'brown', 'green', 'purple'];
+console.log(validateCharacterCount(10, ...crayolabox));
+console.log(validateCharacterCount(10, 'cup', 'tableware'));
+console.log(validateCharacterCount(8, 'washables', 'sponges'));
+
+// recreating shift() method with rest operator
+const classRules = ['share', 'collaborate', 'listen'];
+const [first, ...remaining] = classRules;
+console.log(first);
+console.log(remaining);
+
+// rest operator can help you see parameters that you might not have otherwise known about. 
+// The rest operator is a great way to debug.
+
+// downside to using the rest operator as an argument is that it must be the last argument in all 
+// situations.It must be the last parameter for a function.It must be the last value when destructuring.
+const func = (val1: number, val2: number, val3: number, ...args: number[]) => {
+  const res1 = args.map((val) => val * 2);// 8, 10
+  const res2 = res1.reduce((number, acc) => (number += acc)); // 8 + 10
+  const res3 = val1 + val2 + val3 + res2; // 1+2+3+8+10 = 24
+  return res3;
+};
+
+console.log(func(1, 2, 3, 4, 5));
