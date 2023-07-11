@@ -2,6 +2,7 @@
 
 dist
 src/practiceFiles/loops1.ts
+src/practiceFiles/cleanParametersAndReturns1.ts
 
 # Dependency directories
 node_modules/
