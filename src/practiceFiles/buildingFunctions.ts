@@ -69,7 +69,11 @@ console.log(jobTitleAndLocation(baker));
 
 // If returning an object you must wrap it in parentheses when using arrow functions
 // and omitting return
-const getFullLocation = ({job, location, state,}: {
+const getFullLocation = ({
+  job,
+  location,
+  state,
+}: {
   job: string;
   location: string;
   state: string;
