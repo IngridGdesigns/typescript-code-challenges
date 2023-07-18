@@ -82,3 +82,27 @@ const getFullLocation = ({
   completeLocation: `${location}, ${state}`,
 });
 console.log(getFullLocation(baker));
+
+//Reusing the Rest operator
+// you may want to combine the two arrays into pairs, it is so common that
+// it has a name: 'zip'
+function getBirds(...countries: string[]): string[] {
+  return ['Condor', 'Quetzal', 'Keel-billed Toucan'];
+}
+
+const birds = getBirds('ecuador', 'guatemala', 'costa rica');
+console.log(birds);
+
+// To write a zip function that can take multiple parameters, you need to write
+// a higher - order function that takes the original array(call it left), returns
+// a function that takes the results array(right), and combines them.
+const zip =
+  (
+    ...left: string[] // since parameters are independent you can use rest parameters
+  ) =>
+  (...right: string[]) => {
+    return left.map((item, i) => [item, right[i]]);
+  };
+
+console.log(zip('ecuador', 'guatemala', 'costa rica')(...birds));
+
