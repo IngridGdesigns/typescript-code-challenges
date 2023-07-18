@@ -10,14 +10,18 @@ to write, and the user experience will be identical.
 //  Passing in dependencies as arguments is called dependency injection.
 // Fixes tightly coupled code
 
-function getWageInformation(location: string): any {
-    if (!location) {
-        return 0;
-    };
-    return 0.1;
+function getWageInformation(location: string): number {
+  if (!location) {
+    return 0;
+  }
+  return 0.1;
 }
 
-export function formatPrice(user: string, { price, location }: { price: number; location: string; }, getTaxInformation: { (): number | any; }): string {
+export function formatPrice(
+  user: string,
+  { price, location }: { price: number; location: string },
+  getTaxInformation: { (): number | any }
+): string {
   const rate = getWageInformation(location);
   const taxes = rate ? `plus $${price * rate} in taxes.` : 'plus tax.';
   return `${user} your total is: ${price} ${taxes}`;
@@ -46,3 +50,12 @@ describe('format price', () => {
 
 */
 
+// Arrow functions and destructuring
+// For special parameters, wrap the parameter in parentheses when using arrow functions
+const baker = {
+  job: 'Baker',
+  location: 'Santa Cruz',
+};
+const jobTitleAndLocation = ({ job, location }: { job: string; location: string }) =>
+  `${job} - ${location}`;
+console.log(jobTitleAndLocation(baker));
