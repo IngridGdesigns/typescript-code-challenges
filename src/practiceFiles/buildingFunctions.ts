@@ -55,7 +55,26 @@ describe('format price', () => {
 const baker = {
   job: 'Baker',
   location: 'Santa Cruz',
+  state: 'California',
 };
-const jobTitleAndLocation = ({ job, location }: { job: string; location: string }) =>
-  `${job} - ${location}`;
+
+const jobTitleAndLocation = ({
+  job,
+  location,
+}: {
+  job: string;
+  location: string;
+}) => `${job} - ${location}`;
 console.log(jobTitleAndLocation(baker));
+
+// If returning an object you must wrap it in parentheses when using arrow functions
+// and omitting return
+const getFullLocation = ({job, location, state,}: {
+  job: string;
+  location: string;
+  state: string;
+}) => ({
+  jobTitle: `${job}`,
+  completeLocation: `${location}, ${state}`,
+});
+console.log(getFullLocation(baker));
