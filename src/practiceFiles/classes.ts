@@ -1,7 +1,12 @@
 
 /*
+Building readable Classes..
+(arrow functions behave differently in classes than normal functions)
+In Typescript you have to declare the two properties type before using in 
+the constructor, and then field needs to be initialized in the constructor itself. 
 
-arrow functions behave differently in classes than normal functions
+Note that inside a method body, it is still mandatory to access fields and other methods
+via "this". 
 */
 class Garden {
   amount: number;
