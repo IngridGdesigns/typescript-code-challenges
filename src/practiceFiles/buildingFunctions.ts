@@ -106,3 +106,10 @@ const zip =
 
 console.log(zip('ecuador', 'guatemala', 'costa rica')(...birds));
 
+// prevent contex confusion with arrow function
+// Context is what the keyword this refers to in a function or class.
+
+/*
+Scope pertains to functions and context pertains to objects. not 100 percent true—you
+can use this in any function—it’s a good general rule. - http://ryanmorr.com/understanding-scope-and-context-in-javascript/
+*/
