@@ -15,7 +15,7 @@ be called when the promise is settled (either fulfilled or rejected). It immedia
 returns an equivalent Promise object, allowing you to chain calls to other promise methods.
 */
 
-// example:
+// example from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally:
 function checkMail() {
   return new Promise((resolve, reject) => {
     if (Math.random() > 0.5) {
@@ -36,4 +36,53 @@ checkMail()
   .finally(() => {
     console.log(`Experiment completed\n`);
   });
+
+/* It's important to always have both then() and catch(), to grab resolutions and handle rejections
+ */
+function failedUserLogin() {
+  return new Promise((resolve, reject) => {
+    reject({
+      type: 'Wrong Login',
+    });
+  });
+}
+
+failedUserLogin()
+  .then((something) => {
+    console.log('this wont execute');
+  })
+  .catch((error) => {
+    console.error(`Fail: ${error.type}`);
+  });
+
+function getMusic(theme: string) {
+  if (theme === 'dusk') {
+    return Promise.resolve({
+      album: 'music for airports',
+    });
+  }
+  return Promise.resolve({
+    album: 'kind of blue',
+  });
+}
+
+
+
+/* Async/Await
+async/await, are two separate actions. You use the async keyword to declare that an 
+encapsulating function will be using asynchronous data. Inside the asynchronous function, 
+you can use the await keyword to pause the function until a value is returned.
+*/
+
+async function getTheme() {
+    // transformed into a promise, you still need a then(), method
+  const b = await getMusic('dusk').then((preferences) => {
+    console.log(preferences.album);
+  }).catch(error => {
+      console.error(error);
+  });
+}
+
+/*AJAX calls, using fetch()
+*/
 
