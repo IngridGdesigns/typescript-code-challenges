@@ -90,7 +90,7 @@ console.log(gardenStore.getExpirationMessage);
 /* Use Inheritance with caution...
  */
 class Discount extends GardenStore {
-  amount!: number;
+  declare amount: number;
   expiration: string;
   constructor(amount: number, expiration?: string) {
     super(amount);
