@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 /*
 JavaScript is an asynchronous language. An asynchronous language is merely a language that 
 can execute subsequent lines of code when previous lines of code aren’t fully resolved.The
@@ -85,4 +86,12 @@ async function getTheme() {
 
 /*AJAX calls, using fetch()
 */
+async function getPosts() {
+  const posts = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const body = await posts.json();
+  console.log(body[1]);
+}
+
+getPosts();
+
 
