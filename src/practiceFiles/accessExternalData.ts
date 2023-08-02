@@ -94,4 +94,32 @@ async function getPosts() {
 
 getPosts();
 
+// Posting requests with fetch()
+const update = {
+  title: 'Awesome Cooking Techniques',
+  body: 'Amazing',
+  userId: 1,
+};
+const options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(update),
+};
 
+fetch('https://jsonplaceholder.typicode.com/posts', options)
+  .then((data) => {
+    if (!data.ok) {
+      throw Error(data.statusText);
+    }
+    return data.json();
+  })
+  .then((update) => {
+    console.log(update);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+  // Tip - It’s good practice to keep all your fetch actions in one location. 
+  // This will make them easier to update and easier to test.
