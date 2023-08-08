@@ -37,4 +37,5 @@ component architecture. A component is the combination of all relevant code into
 
 The biggest problem with component architecture is that it depends on build tools and, to a 
 lesser extent, frameworks such as React.js
+example: https://github.com/jsmapr1/simplifying-js/tree/master/architecture/component/simplifying-js-component/src
 */
