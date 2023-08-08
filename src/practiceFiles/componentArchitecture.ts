@@ -38,4 +38,16 @@ component architecture. A component is the combination of all relevant code into
 The biggest problem with component architecture is that it depends on build tools and, to a 
 lesser extent, frameworks such as React.js
 example: https://github.com/jsmapr1/simplifying-js/tree/master/architecture/component/simplifying-js-component/src
+
+problem with component architecture: It won’t work natively in browsers.
+You may need babel to translate ES6 JavaScript and babel-present-react to convert react code.
+https://babeljs.io/
+
+Module loader handles the compiled imports and exports. You have a few options for module loaders. 
+Currently, the most popular module loaders are webpack and rollup.js.
+
+Webpack is a project that can handle everything from combining your JavaScript to processing your 
+CSS or SASS, to image conversion. Webpack can handle so many file types because you declare 
+different actions—referred to as loaders in webpack—based on file extension.
+https://webpack.js.org/concepts/
 */
