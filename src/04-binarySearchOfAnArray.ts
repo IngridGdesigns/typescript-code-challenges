@@ -13,5 +13,6 @@ pseudocode of binary search:
 */
 
 function binarySearch(targetValue: number, array: string[]): number {
-    return 1;
+    let index = 1;
+    return index; // return index of location where the target value was found
 }
