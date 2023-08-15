@@ -14,7 +14,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 7 - Go back to step two.
 */
 
-function binarySearch(arr: number[], targetValue: number): string {
+export function binarySearch(arr: number[], targetValue: number): number {
   let min = 0;
   let max = arr.length - 1;
 
@@ -23,7 +23,8 @@ function binarySearch(arr: number[], targetValue: number): string {
     let guess = Math.floor((min + max) / 2);
 
     if (arr[guess] === targetValue) {
-      return `Number is ${targetValue} with index of ${guess}`;
+      console.log(`Number is ${targetValue} with index of ${guess}`);
+      return guess;
     } else if (arr[guess] < targetValue) {
       min = guess + 1;
     } else {
@@ -31,7 +32,8 @@ function binarySearch(arr: number[], targetValue: number): string {
     }
   }
 
-  return 'Number not found, -1';
+  console.log('Number not found');
+  return -1;
 }
 
 const arrs = [4, 7, 10, 14, 18, 22, 34, 36, 44, 45, 50];
