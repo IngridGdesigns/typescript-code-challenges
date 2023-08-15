@@ -19,7 +19,7 @@ describe('binary search of an array function', () => {
       [1, 3, 6, 7, 9, 12, 15, 18, 22],
       33
     );
-      console.log(binarySearchOfAnArray)
+    
     const targetNotFound = -1
     expect(targetNotFound).toEqual(binarySearchOfAnArray);
   });
