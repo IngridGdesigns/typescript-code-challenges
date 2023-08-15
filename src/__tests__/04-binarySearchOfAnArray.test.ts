@@ -10,7 +10,17 @@ describe('binary search of an array function', () => {
       42
     );
     const expected2 = 13;
-      expect(expected1).toEqual(binarySearchOfAnArray1);
-      expect(expected2).toEqual(binarySearchOfAnArray2);
+    expect(expected1).toEqual(binarySearchOfAnArray1);
+    expect(expected2).toEqual(binarySearchOfAnArray2);
+  });
+
+  it('should return -1, if target is not present in array', () => {
+    const binarySearchOfAnArray = binarySearch(
+      [1, 3, 6, 7, 9, 12, 15, 18, 22],
+      33
+    );
+      console.log(binarySearchOfAnArray)
+    const targetNotFound = -1
+    expect(targetNotFound).toEqual(binarySearchOfAnArray);
   });
 });
