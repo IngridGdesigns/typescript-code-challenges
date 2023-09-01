@@ -12,9 +12,9 @@ function swapping(
   secondIndex: number
 ): number[] {
   if (firstIndex < arr.length && secondIndex < arr.length) {
-    const saving = arr[firstIndex];
+    const tempFirstIndex = arr[firstIndex];
     arr[firstIndex] = arr[secondIndex];
-    arr[secondIndex] = saving;
+    arr[secondIndex] = tempFirstIndex;
   }
 
   return arr;
