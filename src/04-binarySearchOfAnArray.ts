@@ -20,7 +20,7 @@ export function binarySearch(arr: number[], targetValue: number): number {
 
   let guess; // or mid
   while (min <= max) {
-    let guess = Math.floor((min + max) / 2);
+    guess = Math.floor((min + max) / 2); // find the mean
 
     if (arr[guess] === targetValue) {
       console.log(`Number is ${targetValue} with index of ${guess}`);
