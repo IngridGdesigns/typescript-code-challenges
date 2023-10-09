@@ -82,3 +82,7 @@ function logAtMost5(n) {
 - variable assignment is constant
 - Accessing elements in an array (by index) or object(by key) is constant
 - In a loop the complexity is the length of the loop tiimes the complexity of whatever happens inside the loop
+
+![Big O Notation](/src/assets/bigOgraph.png "Big O notation")
+
+[image source](https://www.cdn.geeksforgeeks.org/wp-content/uploads/mypic.png)
