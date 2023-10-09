@@ -46,3 +46,39 @@ function addUpTo(n) {
 
 
 ```
+
+Nested loops are different
+
+```javascript
+function print(n) { // nested loop
+    for (let i = 0; i < n; i++){ // O(n) operation inside an O(n) operation
+        for(let j = 0; j < n; j++){ 
+            console.log(i, j); // 0(n²) 
+        }
+    }
+}
+```
+
+```javascript
+//Other example
+function log4(n) {
+    for (let i = 1; i <= Math.max(4, n); i++){
+        console.log(i); // 0(n)
+    }
+}
+
+function logAtMost5(n) {
+    for (let i = 1; i <= Math.min(5, n); i++){
+        console.log(i); // As n grows, big O is constant (graph stays flat when it hits 5), 
+        // if n is 1000 it will only run 5 times =  0(1) fantastic runtime
+    }
+}
+```
+
+- Constants don't matter  - example: if we have O(500) (there will always be 500 operations), we express that by writing O(1), O(13n²) will expressed as O(n²)
+- Smaller terms don't matter - O(n + 50) = O(n)
+- When analyzing comlexity with big that can get complicated
+- Arithmetic operations are always constant
+- variable assignment is constant
+- Accessing elements in an array (by index) or object(by key) is constant
+- In a loop the complexity is the length of the loop tiimes the complexity of whatever happens inside the loop
