@@ -125,6 +125,10 @@ more examples:
     - it is helpful to remember that the base of the logarithm is the same as the base of the exponent.
 Online the shorthand is log, usually the base is ignored
 
-Logarithmic time complexity is great 0(log n), or 0(n), better than O(n²)..
+Logarithmic time complexity is great 0(log n), or 0(n), better than O(nlog n) or O(n²)..
+- recursion(space complexity), search and sorting algorithms involve logs
+
+Big O cares about general trends(linear?, constant?), cares about algorithm not the computer used to run the algorithm, it's used to analyze the performance of the algorithm and finally gives us a high leve of understanding the tiime or space complexity of an algorithm. Helps us compare it's space and time complexity.
+
 
 
