@@ -7,7 +7,7 @@ Big O is a numeric representation
 
 Which does better mean?
 
-- Faster?>
+- Faster?
 - Readable?
 - Less memory-intensive?
   Speed and Less memory are important and readability is something to consider too
@@ -27,7 +27,7 @@ Example:
 function that sums all of numbers from 1 up to n
 
 ```javascript
-function addAll(n) {
+function addAll(n): number {
   let total = 0;
   for (let i = 1; i <= n; i++) {
     total += i;
@@ -38,7 +38,7 @@ function addAll(n) {
 }
 // Which one is better?
 
-function addUpTo(n) {
+function addUpTo(n): number {
   return (n * (n + 1)) / 2;
   // <--- 1 - multiplication, 2. addition, 3. division, always 3 operations
   // Big O notation is O(1) - as input grows it has no change in runtime
@@ -48,7 +48,7 @@ function addUpTo(n) {
 #### Nested loops are different
 
 ```javascript
-function print(n) {
+function print(n): void {
   // nested loop
   for (let i = 0; i < n; i++) {
     // O(n) operation inside an O(n) operation
@@ -61,13 +61,13 @@ function print(n) {
 
 ```javascript
 //Other example
-function log4(n) {
+function log4(n): void {
   for (let i = 1; i <= Math.max(4, n); i++) {
     console.log(i); // 0(n)
   }
 }
 
-function logAtMost5(n) {
+function logAtMost5(n): void {
   for (let i = 1; i <= Math.min(5, n); i++) {
     console.log(i); // As n grows, big O is constant (graph stays flat when it hits 5),
     // if n is 1000 it will only run 5 times =  0(1) fantastic runtime
