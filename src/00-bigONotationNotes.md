@@ -107,3 +107,15 @@ function add(arr): number {
 //We will always have total and i, no matter how big arr is, it will be 0(1) space
 
 ```
+
+### Logarithms!!
+
+Big O expressions have more complex mathematical expressions, such as log
+What is log? It's the verse of exponentiation
+examples: 
+- log²(8)= 3 ----> 2³= 8, which is (2x2x2 = 8)
+more examples because i can't write 2 in the base...
+![logarithmic examples](/src/assets/logarithmicExamples.png 'Logarithmic examples')
+[image source](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/a/intro-to-logarithms)
+
+
