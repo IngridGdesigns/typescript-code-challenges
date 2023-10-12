@@ -113,9 +113,18 @@ function add(arr): number {
 Big O expressions have more complex mathematical expressions, such as log
 What is log? It's the verse of exponentiation
 examples: 
-- log²(8)= 3 ----> 2³= 8, which is (2x2x2 = 8)
-more examples because i can't write 2 in the base...
+- log₂(8)= 3 ----> 2³= 8, which is (2x2x2 = 8)
+more examples:
 ![logarithmic examples](/src/assets/logarithmicExamples.png 'Logarithmic examples')
 [image source](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/a/intro-to-logarithms)
+
+- logₓ(a) = C -----> xᵃ=2
+    - x is the base
+    - c is the exponent
+    - a is called the argument
+    - it is helpful to remember that the base of the logarithm is the same as the base of the exponent.
+Online the shorthand is log, usually the base is ignored
+
+Logarithmic time complexity is great 0(log n), or 0(n), better than O(n²)..
 
 
