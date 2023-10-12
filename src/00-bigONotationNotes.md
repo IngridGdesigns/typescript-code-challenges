@@ -130,5 +130,16 @@ Logarithmic time complexity is great 0(log n), or 0(n), better than O(nlog n) or
 
 Big O cares about general trends(linear?, constant?), cares about algorithm not the computer used to run the algorithm, it's used to analyze the performance of the algorithm and finally gives us a high leve of understanding the tiime or space complexity of an algorithm. Helps us compare it's space and time complexity.
 
+### Objects through Big 0
+- When to use them?
+    - When order doesn't matter
+    - When you need fast 
+        - searching O(n) ->  linear time, checking every single property
+        - access 0(1)
+        - insertion O(1)
+        - removal O(1)
+    - methods are all 0(n)(if we have 10, we will have 10 operations it has to run), except hasOwnProperty 0(1) consant time
+ 
+
 
 
