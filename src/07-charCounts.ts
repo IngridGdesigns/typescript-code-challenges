@@ -33,3 +33,5 @@ export function charCounts(str: string): object {
   }
   return letterCount; // return object with keys that are lowercase characters
 }
+
+// run npm test, test completed forthis one
