@@ -12,7 +12,7 @@ steps:
 // export function charCounts(str: string): object {
 //   const letterCount: { [key: string]: any } = {};
 //   for (let i = 0; i < str.length; i++) {
-    // if (letterCount.hasOwnProperty(str[i])) {
+    // if (letterCount.hasOwnProperty(str[i])) { // if(letterCount[str[i] > 0])
     //   // Wanted to use hasOwn()
     //   letterCount[str[i]] += 1;
     // } else {
@@ -24,12 +24,17 @@ steps:
 
 export function charCounts(str: string): object {
   const letterCount: { [key: string]: any } = {};
+
   for (let i = 0; i < str.length; i++) {
+    // regex, find out if its a letter or number, skip spaces, punctuation..
+    const regex = /[a-z0-9]/;
     // refactored with ternary
-    const inputStr = str[i];
-    letterCount.hasOwnProperty(inputStr)
-      ? (letterCount[inputStr] += 1)
-      : (letterCount[inputStr] = 1);
+    const inputStr = str[i].toLowerCase();
+    if (regex.test(inputStr)) {
+      letterCount.hasOwnProperty(inputStr)
+        ? (letterCount[inputStr] += 1)
+        : (letterCount[inputStr] = 1);
+    }
   }
   return letterCount; // return object with keys that are lowercase characters
 }
