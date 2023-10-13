@@ -11,4 +11,14 @@ describe('charCounts function', () => {
     expect(expectedOutput1).toEqual(result1);
     expect(expectedOutput2).toEqual(result2);
   });
+      it('should count alphanumeric characters only', () => {
+        const expectedOutput1 = { h: 1, e: 1, l: 2, o: 1 };
+        const result1 = charCounts('hello!');
+
+        const expectedOutput2 = { t: 1, h: 1, r: 1, e: 2, 2: 1, 1:1 };
+        const result2 = charCounts('three21@');
+
+        expect(expectedOutput1).toEqual(result1);
+        expect(expectedOutput2).toEqual(result2);
+      });
 });
