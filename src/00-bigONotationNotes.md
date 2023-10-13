@@ -140,6 +140,19 @@ Big O cares about general trends(linear?, constant?), cares about algorithm not 
         - removal O(1)
     - methods are all 0(n)(if we have 10, we will have 10 operations it has to run), except hasOwnProperty 0(1) consant time
  
+ ### Arrays through Big 0
+ - Used them for ordered lists
+ - Quick too
+    - searching O(n) 
+    - access 0(1) ---> jumps immediatly to the data, no matter how long it is, its consant time
+    - insertion - it depends... 
+        -  to add item at the end of array, array.push() its constant time 0(1),
+        -  adding to the beginning moves all the indexes, using array.unshift() --> O(N)
+    - removal - it depends, ...
+        - removing at the beginning also moves all... array.shift() --> O(n)
+        - at the end its easier, array.pop()
+    - sort (O(N*logN))
+    - forEach/map/filter/reduce/etc - O(N)
 
 
 
