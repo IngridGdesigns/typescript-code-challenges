@@ -25,5 +25,6 @@
  - Write your code and solve if you can or solve a simpler problem...
  - temporarily ignore the part that is giving you the hard time, working on parts of the problem that you do understand, 
  - incorporate that difficulty back in
-- review and refactor
+- review and refactor!!
+    - it's important to strive to get clean code and try to improve the code, look back and reflect, is it readable? efficient? can you understand at it at a glance? can you think of other ways to refactor? can you check the results? can you improve performance? is there a different way of solving a problem? 
 
