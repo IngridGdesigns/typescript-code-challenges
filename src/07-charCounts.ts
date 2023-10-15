@@ -8,7 +8,7 @@ steps:
 - if char is not in object add it and set value to 1,
 - if char is in object, add one to the object
 */
-
+ //1. Brute force solution
 // export function charCounts(str: string): object {
 //   const letterCount: { [key: string]: any } = {};
 //   for (let i = 0; i < str.length; i++) {

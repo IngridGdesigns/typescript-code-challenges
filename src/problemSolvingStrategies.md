@@ -28,3 +28,7 @@
 - review and refactor!!
     - it's important to strive to get clean code and try to improve the code, look back and reflect, is it readable? efficient? can you understand at it at a glance? can you think of other ways to refactor? can you check the results? can you improve performance? is there a different way of solving a problem? 
 
+### How to improve
+Practice, practice, practice!!
+
+
