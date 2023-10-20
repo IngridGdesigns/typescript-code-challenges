@@ -66,3 +66,5 @@ function counter(arr: number[]): any {
   }
   return frequencyCounter;
 }
+
+//time complexity - O(n) linear time
