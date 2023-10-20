@@ -62,7 +62,7 @@ export function isFirstArrySameAsSecondArry(
 function counter(arr: number[]): any {
   let frequencyCounter: { [key: string]: any } = {};
   for (let val of arr) {
-    frequencyCounter[val] = (frequencyCounter[val] || 0) + 1;
+    frequencyCounter[val] = (frequencyCounter[val] || 0) + 1; // check if its present or initialize to 1;
   }
   return frequencyCounter;
 }
