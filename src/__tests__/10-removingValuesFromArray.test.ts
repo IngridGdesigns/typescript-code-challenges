@@ -6,7 +6,7 @@ describe('remove function', () => {
     const expectedOutput1 = [1, 3, 4, 5];
 
     const arr2 = [1];
-    const expectedOutput2: any = [];
+    const expectedOutput2: any = []; // had to add type to avoid errors
 
     const removed1 = remove(arr1, 2);
     const removed2 = remove(arr2, 1);
