@@ -26,7 +26,9 @@ export function reverseWordsWithForLoop(sentence: string): string {
     newArr.push(str);
   }
 
+  
   return newArr.join(' ');
+
 }
 
 // const phrase = 'There is an epic book of awesome somewhere';
