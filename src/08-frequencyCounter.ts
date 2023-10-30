@@ -69,3 +69,17 @@ function counter(arr: number[]): any {
 }
 
 //time complexity - O(n) linear time
+
+// /*
+//count frequency of an item in one array
+function count (arr: number[], item: number): any {
+    let counter = 0; 
+  for(let i = 0; i < arr.length; i++){
+      if(arr[i] === item){
+         ++counter; // or write counter += 1;
+      }
+  }
+  return counter;
+}
+console.log(count([1, 2, 3, 2, 2, 4], 2));
+// */
