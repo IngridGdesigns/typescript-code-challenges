@@ -38,3 +38,6 @@ export function binarySearch(arr: number[], targetValue: number): number {
 
 const arrs = [4, 7, 10, 14, 18, 22, 34, 36, 44, 45, 50];
 console.log(binarySearch(arrs, 34));
+
+
+// how does this change if array is undetermined length;
